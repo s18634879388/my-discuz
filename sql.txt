@@ -1,0 +1,41 @@
+//用户登录信息
+CREATE TABLE `login_info` (
+  `id` varchar(64) NOT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `user_password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//用户信息
+CREATE TABLE `user_info` (
+  `id` varchar(64) NOT NULL,
+  `nickname` varchar(255) DEFAULT NULL COMMENT '昵称',
+  `sex` int(2) DEFAULT NULL COMMENT '性别',
+  `age` int(4) DEFAULT NULL COMMENT '年龄',
+  `id_card` varchar(20) DEFAULT NULL COMMENT '身份证',
+  `mood` varchar(255) DEFAULT NULL COMMENT '心情',
+  `e-mail` varchar(255) DEFAULT NULL COMMENT '邮箱',
+  `birth` date DEFAULT NULL COMMENT '生日',
+  `phone` varchar(13) DEFAULT NULL COMMENT '电话',
+  `home_town` varchar(255) DEFAULT NULL COMMENT '故乡',
+  `now_home` varchar(255) DEFAULT NULL COMMENT '现居地',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//用户关注信息
+CREATE TABLE `follow` (
+  `user_id` varchar(64) NOT NULL COMMENT '用户id',
+  `follow_user_id` varchar(64) DEFAULT NULL COMMENT '用户关注的id',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//用户等级信息
+CREATE TABLE `score` (
+  `user_id` varchar(64) NOT NULL,
+  `experience` int(10) DEFAULT NULL COMMENT '经验',
+  `level` int(3) DEFAULT NULL COMMENT '等级',
+  `tag` varchar(255) DEFAULT NULL COMMENT '标签',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+

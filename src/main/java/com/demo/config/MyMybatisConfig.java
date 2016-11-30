@@ -1,6 +1,7 @@
 package com.demo.config;
 
 import com.demo.mapper.DemoUserMapper;
+import com.demo.mapper.UserWrapperMapper;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -65,6 +66,9 @@ public class MyMybatisConfig {
     public DemoUserMapper demoUserMapper(){
         return sqlSessionTemplate.getMapper(DemoUserMapper.class);
     }
+
+    @Bean
+    public UserWrapperMapper userWrapperMapper(){return sqlSessionTemplate.getMapper(UserWrapperMapper.class);}
 
 
 }

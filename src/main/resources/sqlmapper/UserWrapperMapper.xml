@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.UserWrapperMapper">
+    <resultMap type="com.demo.domain.UserWrapper" id="UserWrapperMap">
+        <result column="id" property="id"/>
+        <result column="nickname" property="nickName"/>
+        <result column="sex" property="sex"/>
+        <result column="age" property="age"/>
+        <result column="id_card" property="idCard"/>
+        <result column="mood" property="mood"/>
+        <result column="e_mail" property="eMail"/>
+        <result column="birth" property="birth"/>
+        <result column="phone" property="phone"/>
+        <result column="home_town" property="homeTown"/>
+        <result column="now_home" property="nowHome"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_password" property="userPassword"/>
+
+    </resultMap>
+
+    <insert id="addLoginInfo">
+        INSERT INTO login_info(id,user_name,user_password) VALUES (#{id},#{userName},#{userPassword})
+    </insert>
+
+
+</mapper>
+
