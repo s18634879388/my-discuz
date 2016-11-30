@@ -13,6 +13,9 @@ spring:
     port: 6379
   cache:
     type: redis
+  freemarker:
+    content-type: application/json
+    charset: utf-8
 mybatis:
   typeAliasesPackage: com.demo
   mapperLocations: classpath:/sqlmapper/*.xml

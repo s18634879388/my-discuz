@@ -21,8 +21,14 @@ public class UserInfoController {
     @Autowired
     UserUtil userUtil;
 
-    @RequestMapping(value = "",method = RequestMethod.POST)
+    @RequestMapping(value = "/my-discuz")
+    public String welcom(){
+        return "welcom";
+    }
+
+    @RequestMapping(value = "/my-discuz/register",method = RequestMethod.POST)
     public String regist(@RequestBody LoginInfo loginInfo){
+        System.out.println(loginInfo.getUserName()+"=========="+loginInfo.getUserPassword()+"=========="+loginInfo.getId());
         loginInfo.setId(userUtil.makeUserId());
         System.out.println(loginInfo.getUserName()+"=========="+loginInfo.getUserPassword()+"=========="+loginInfo.getId());
         userInfoService.regist(loginInfo);
