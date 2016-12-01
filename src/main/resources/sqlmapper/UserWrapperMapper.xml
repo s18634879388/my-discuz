@@ -24,6 +24,11 @@
         INSERT INTO login_info(id,user_name,user_password) VALUES (#{id},#{userName},#{userPassword})
     </insert>
 
+    <insert id="addUserInfo">
+        INSERT INTO user_info(id,nickname,sex,age,id_card,mood,e_mail,birth,phone,home_town,now_home) VALUES (#{id},#{nickName},#{sex},#{age},#{idCard},#{mood},#{eMail},#{birth},#{phone},#{homeTown},#{nowHome})
+
+    </insert>
+
 
 </mapper>
 
